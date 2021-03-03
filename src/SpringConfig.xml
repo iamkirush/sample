@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:util="http://www.springframework.org/schema/util"
+	xsi:schemaLocation="
+        http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util.xsd"> <!-- bean definitions here -->
+
+	<bean id="hello" class="com.sgic.sp.HelloPrinter">
+		<property name="message" value="Hello this is property" />
+	</bean>
+
+	<bean id="school" class="com.sgic.sp.School">
+		<!-- <constructor-arg ref="dep"/> -->
+		<property name="meth" ref="dep" />
+	</bean>
+	
+	<bean id="dep" class="com.sgic.sp.Department"></bean>
+	
+	<bean id="fruit" class="com.sgic.sp.FruitList" init-method="init" destroy-method="destroy">
+	<property name="friutList">
+	<list>
+	
+	<value>Aaaa</value>
+	<value>nnn</value>
+	<value>ccc</value>
+	<value>ddd</value>
+	</list>
+	</property>
+	
+	</bean>
+	
+	
+
+
+
+</beans>
